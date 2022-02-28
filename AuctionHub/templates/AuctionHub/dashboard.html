@@ -1,0 +1,62 @@
+{% load static %}
+{% load widget_tweaks %}
+
+{% block pgcss %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> {% endblock pgcss %}
+<script src="https://kit.fontawesome.com/622c95e3fd.js" crossorigin="anonymous"></script>
+
+{% block content %}
+
+<nav class="navbar">
+    <div>
+        <img src="{% static 'images/auction hub.png' %}" alt="" class="logo">
+    </div>
+
+    <ul class="links-container">
+        <!-- <li><a style="text-decoration: none;" href="{% url 'categories' %}"><i class="fas fa-record-vinyl"></i>Auctions</a></li>
+        <li class="nav-item">
+            <a  href="{% url 'add_product' %}"><i class="fa fa-folder-plus"></i>Add Product</a>
+        </li> -->
+        <li><a style="text-decoration: none;" href="{% url 'login' %}"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a></li>
+
+    </ul>
+</nav>
+<div class="center-container">
+    <div class="image-container">
+        <img src="{% static 'images/bid.jpg' %}" alt="" class="bid-img">
+    </div>
+    <div class="button-continer">
+        AuctionHub is your one stop destination to discover, sell and buy unique as well refurbished goods at a cost which is beneficial to both the buyer and the seller, making sure they both get the best value. We are dedicated to bring the most seamless and hassslefree experience to sellers as well as buyers and at the same time connect the supply and demand across India.
+
+        <div class="form-fields">
+            <a href="{% url 'add_product' %}" class="btn">Get Started</a>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="exp">
+   <div class="exp1"></div>
+   <div class="instructions">Instructions</div>
+   <div class="exp2"></div>
+
+</div> -->
+<!-- 
+<div class="steps-container">
+    <div class="steps">
+        <span class="step-no">1</span>
+        <p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iusto delectus voluptatum distinctio laboriosam mollitia amet reprehenderit illum cumque magnam.</p>
+    </div>
+    <div class="steps">
+        <span class="step-no">2</span>
+        <p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iusto delectus voluptatum distinctio laboriosam
+                mollitia amet reprehenderit illum cumque magnam.</p>
+    </div>
+    <div class="steps">
+        <span class="step-no">3</span>
+        <p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque iusto delectus voluptatum distinctio laboriosam
+                mollitia amet reprehenderit illum cumque magnam.</p>
+    </div>
+</div> -->
+
+{% endblock %}

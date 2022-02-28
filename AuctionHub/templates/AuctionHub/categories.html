@@ -1,0 +1,32 @@
+{% extends 'AuctionHub/base.html' %}
+{% load static %}
+
+{% block pgcss %}
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/622c95e3fd.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock pgcss %}
+{% block title %}
+Categories
+{% endblock %}
+
+{% block content %}
+
+{% for category in categories %}
+<div class="column-4 project">
+
+    <a href="{% url 'filter' category.name %}">
+        <div class="grid-item">
+            {{ category.name|title }}
+        </div>
+    </a>
+  
+</div>
+{% endfor %}
+
+
+
+
+
+{% endblock %}

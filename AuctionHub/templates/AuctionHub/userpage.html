@@ -1,0 +1,27 @@
+{% extends 'AuctionHub/base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block pgcss %} <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> {% endblock pgcss %}    
+
+{% block content %}
+
+
+<div class="center-container">
+    <div class="image-container">
+        <img src="{% static 'images/bid.jpg' %}" alt="" class="bid-img">
+    </div>
+    <div class="button-continer">
+        AuctionHub is your one stop destination to discover, sell and buy unique as well refurbished goods at a cost which is beneficial to both the buyer and the seller, making sure they both get the best value. We are dedicated to bring the most seamless and hassslefree experience to sellers as well as buyers and at the same time connect the supply and demand across India.
+
+        <div class="form-fields">
+            <a href="{% url 'add_product' %}" class="btn">Get Started</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

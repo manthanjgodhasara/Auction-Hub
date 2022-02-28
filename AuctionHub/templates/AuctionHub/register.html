@@ -1,0 +1,64 @@
+
+
+{% load static %}
+{% load widget_tweaks %}
+
+hiiii
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/signup.css' %}">
+    <script src="https://kit.fontawesome.com/622c95e3fd.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video  src="{% static 'videos/auction hub.mp4' %}" autoplay muted loop></video>
+    </div>
+    <div class="signup_container">
+        <div class="image-container">
+            <img src="{% static 'images/login.svg' %}" alt="">
+        </div>
+        <div class="signup_container-form">
+            <div class="lol"><h1 class="text">Signup</h1></div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input class="form-control" autofocus type="text" name="username" placeholder="Username">
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input class="form-control" type="email" name="email" placeholder="Email Address">
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-key"></i>
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <input class="form-control" type="password" name="confirmation" placeholder="Confirm Password">
+                </div>
+
+                <div class="form-fields">
+                    <button type="submit">Submit</button>
+                </div>
+                <div class="messages">
+                    {% for message in messages %}
+                        {{ message}}
+                    {% endfor %}
+                </div>
+              </form>
+              <p style="text-align: center;margin-top: 20px;">Already have an account? <a href="{% url 'login' %}">Log In here.</a></p>
+        </div>
+    </div>
+</body>
+
+
+</html>

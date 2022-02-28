@@ -1,0 +1,97 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap'); */
+*{
+    margin: 0px;
+    padding: 0px;
+    /* font-family: 'Baloo Bhai 2', cursive; */
+    font-family: verdana;
+  }
+  
+
+  
+  .bid-img {
+    width: 800px;
+    height: 400px;
+    margin-top: 80px;
+  }
+  
+  .center-container {
+    /* background-color: #0984e3; */
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+  }
+  
+  .form-fields {
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .btn {
+    background: #2d98da;
+    color: white;
+    font-size: 15px;
+    padding: 15px 30px;
+    margin-top: 9px;
+    border: none;
+    border-radius: 40px;
+  }
+  
+  .btn:hover {
+    background-color: black;
+    color: #2d98da;
+    cursor: pointer;
+  }
+  
+  .exp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px;
+    /* margin-left: 100px; */
+    box-sizing: border-box;
+  }
+  
+  .exp1 {
+    background: linear-gradient(to right, #9999ff 0%, #66ffff 100%);
+    height: 10px;
+    width: 15%;
+    margin-right: 10px;
+    /* margin-left: 5px; */
+  }
+  
+  .exp2 {
+    background: linear-gradient(to right, #9999ff 0%, #66ffff 100%);
+    height: 10px;
+    width: 69.6%;
+    margin-left: 10px;
+  }
+  
+  .instructions {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .steps-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    grid-column-gap: 80px;
+    margin: 50px 50px;
+  }
+  
+  .steps {
+    text-align: center;
+  }
+  
+  .step-no {
+    background-color: #2d98da;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    /* margin-bottom: 20px; */
+  }
+  
+  .step-text {
+    margin-top: 15px;
+  }
+  

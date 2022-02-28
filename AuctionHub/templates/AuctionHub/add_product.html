@@ -1,0 +1,43 @@
+
+{% load static %}
+{% load widget_tweaks %}
+
+
+
+{% block pgcss %} <link rel="stylesheet" href="{% static 'css/add_product.css' %}"> {% endblock pgcss %}
+
+
+{% block content %}
+<div class="video-container">
+    <video src="{% static 'videos/auction hub.mp4' %}" autoplay muted loop></video>
+</div>
+<div class="form-container" style="margin-bottom:20px">
+        <div class="lol">
+            <h1 class="text" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Auction Form</h1>
+        </div>
+        <form action="{% url 'add_product' %}" enctype="multipart/form-data" class="form" method="post">
+            {% csrf_token %}
+            {% render_field form.name class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Name of item" %}
+            {% render_field form.category class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Category" %}
+            {% render_field form.start_date class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Date" type="date" %}
+            {% render_field form.end_date class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Date" type="date" %}
+            {% render_field form.start_time class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;"  type="time" %}
+            {% render_field form.end_time class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;"  type="time" %}
+            {% render_field form.startBid class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Initial price of item" %}
+            {% render_field form.description class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Description" %}
+            {% render_field form.condition class="required" style="margin: 10px 30px;border: 1px solid gray; border-radius: 5px;padding: 5px;" placeholder="Condition" %}
+            <p style="margin: 0 50px;">Add images for product</p>
+            {% render_field form.image1 class="required"  %}
+            {% render_field form.image2 class="required"  %}
+            {% render_field form.image3 class="required"  %}
+            {% render_field form.image4 class="required"  %}
+            {% render_field form.image5 class="required"  %}
+
+
+                   
+        
+        
+                <div class="form-fields"><button style=" background: #2d98da; font-size: 15px;margin:0 40% 20px 40%;padding: 15px 30px;border: none;border-radius: 40px;" type="submit" >Submit</button></div>
+        </form>
+</div>
+{% endblock %}

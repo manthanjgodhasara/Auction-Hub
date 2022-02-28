@@ -1,0 +1,69 @@
+
+{% extends 'AuctionHub/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block pgcss %}
+    <link rel="stylesheet" href="{% static 'css/upcoming.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/622c95e3fd.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock pgcss %}
+
+{% block content %}
+
+<h1 class="header">Auctions</h1>
+
+    <div class="card_container">
+        {% for obj in objects %}
+        <div class="card">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{{ obj.image1.url }} " style="height: 250px;" class="d-block w-100" alt="No image uploaded">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{{ obj.image2.url }}" style="height: 250px;" class="d-block w-100" alt="No image uploaded">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{{ obj.image2.url }}" style="height: 250px;" class="d-block w-100" alt="No image uploaded">
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="card-heading">{{ obj.name }}</h3>
+            
+
+            <p class="card-heading">Auction Ends In</p>
+
+            <div id="countdown" data-countdown="{{ obj.end_date|date:'Y-m-d' }}">
+                <div data-days="00">00</div>
+                <div data-hours="00">00</div>
+                <div data-minuts="00">00</div>
+                <div data-seconds="00">00</div>
+
+
+                <div class="coutdown-headings">Days</div>
+                <div class="coutdown-headings">Hours</div>
+                <div class="coutdown-headings">Minutes</div>
+                <div class="coutdown-headings">Seconds</div>
+            </div>
+
+
+            <div class="form-fields">
+                <a href="{% url 'details'  obj.id %}"><button>More Details</button></a>
+            </div>
+        </div>
+        {% endfor %}
+        <p id="demo"></p>
+    </div>
+    
+    {% block scripts %}
+        <script src="{% static 'js/upcoming.js' %}"></script>
+    {% endblock %}
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{%endblock%}
